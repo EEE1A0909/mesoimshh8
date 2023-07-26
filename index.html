@@ -1,0 +1,1455 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>See Mesoamerica Again | 再现美索美洲</title>
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+		<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="icon" type="image/png" sizes="32x32" href="image/1point/tenochtitlan.png"/><link rel="icon" type="image/png" sizes="16x16" href="image/1point/tenochtitlan.png"/>
+    <style>
+html::-webkit-scrollbar { width: 6px; } html::-webkit-scrollbar-track { background: rgb(179, 177, 177,0); border-radius: 6px; } html::-webkit-scrollbar-thumb { background: rgb(136, 136, 136,0); border-radius: 6px; } html::-webkit-scrollbar-thumb:hover { background: rgb(100, 100, 100,0); border-radius: 6px; } html::-webkit-scrollbar-thumb:active { background: rgb(68, 68, 68,0); border-radius: 6px; }
+body { margin: 0; padding: 0; font-family:STKaiti,STSong,Simsun,"Times New Roman",Times,serif;font-weight:400;} #map { position: absolute; top: 0; bottom: 0; width: 100%; } .marker { background-size: cover; width: 34px; height: 34px; cursor: pointer; } .modal { position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.4); } .modal-content { background-color: #fefefe; margin: 0% auto; padding: 10px; margin-top:50px; border: 1px solid #888; width: 80%; height:94%; } .close { color: #aaa; float: right; font-size: 28px; font-weight: bold;display:flex;width: 100%; } .close:hover, .close:focus { color: black; text-decoration: none; cursor: pointer; } .iframe-container { position: relative; width: 100%; height: 95%; display: flex; } .iframe {width:100%; height: 95%; } .h333 { font-family:STKaiti,STSong,Simsun,"Times New Roman",Times,serif;font-weight:400;font-size: 1.17em; font-weight: bold; } .mapboxgl-popup-content { position: relative; background: #fff; border-radius: 5px; box-shadow: 0px 1px 2px rgba(0,0,0,.1);    text-align: center; padding: 10px 10px 10px; pointer-events: auto; } .dropdown:hover .dropdown-menu { display: block; } #container { display: flex; align-items: center; justify-content: space-between; height: 50px; width: 100%; color:#ffffff; } #icon { display: flex; align-items: center; padding-top:15px; justify-content: center; width: 50px; height: 50px; filter: drop-shadow(rgb(0,0,0,.3) 0px 1px 2px); } #leftTitle, #rightTitle { padding: 0 20px;  color: #fefefe; font-size:1.8em;margin-top:5px;} a { color: #456685;text-decoration:none  } a:hover, a:focus { color: #456685; text-decoration:none } .dropdown-menu { position: absolute; top: 100%; left: 0; z-index: 1000; display: none; float: left; min-width: 160px; padding: 16px; margin: 2px 0 0;border-radius: 0; font-size:1.2em; text-align: left; list-style: none; background-color: #fff; color:#222222; width: 500px; } .dropdown-menu1	{left: -218px;} .dropdown-menu2	{left:-350px;} .mapboxgl-ctrl-logo{visibility:hidden;} #toggleBtn { position: absolute; bottom:75px; left: 10px; padding: 10px 15px; background-color: #3074a4; color: #fff; border: none; border-radius: 5px; cursor: pointer;shadow(rgb(0,0,0,.3) 0px 1px 2px);width:80px;border: 1px solid rgba(0, 0, 0, 0.4); }  #toggleBtn:hover { background-color: #f8f8f8; color: #404040; } #toggleBtn.active { background-color: #3887be; color: #ffffff; } #toggleBtn.active:hover { background: #3074a4; }
+ 
+
+.background { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.82); display: flex; align-items: center; justify-content: center; opacity: 1; transition: opacity 2s ease; z-index: 999; } .title { font-size:4em; color: #fff; opacity: 0; transition: opacity 2s ease, transform 2s ease;text-align: center;}
+
+    </style>
+</head>
+<body>
+
+    <div class="background" id="background">
+        <div class="title" id="title1">See Mesoamerica Again<br>再 现 美 索 美 洲</div>
+    </div>
+
+
+<header   style="position:fixed; z-index:3; top:0;width:100%; margin-bottom: 24px; float: right!important; height:53px; margin-bottom: 24px; background-color:rgba(5,5,5,0.75);">
+
+  <div id="container">
+        <div id="leftTitle" style="width:350px;"><b>See Mesoamerica Again</b></div>
+  
+
+
+        <div id="icon"> <div class="nav-item ml-2 btn-group-vertical dropdown" id="underline">
+           <a class="nav-link" data-toggle="dropdown" href="#"><i class="ti-hand-point-down"></i><img src="image/logo.webp"  width="60px" ></a>
+           <ul class="dropdown-menu dropdown-menu1">  
+
+
+		   <div>The purpose of the <b>See Mesoamerica Again</b> project is to let more people understand the original appearance of the ancient Mesoamerica city-state. We have collected illustrations reconstructives of some city-states. The map on the home page is a guide. You can choose city-states in different locations, click on it, and the illustrations will be displayed. Many archaeological sites do not have illustrations reconstructive, and they are not marked on the map.</div> 
+		   <div>This website is created and operated by <a href="https://aztec-embassy.org/page/project.html"target="_blank">Aztec Empire Embassy in China (阿兹特克帝国驻华使馆)</a>. This is a non-profit amateur history institution.</div>
+
+
+		   <div style="border-top: 1px solid #cfcccc;padding-top:15px;margin-top:15px;"><b>再现美索美洲</b> ( See Mesoamerica Again ) 项目的目的是让更多人了解美索美洲古代城邦的原貌。我们收集了一些城邦重建图。主页上的地图是一个引导目录。你可以选择不同地点的城邦，点击它，就会显示图片。很多考古遗址都没有重建的图片，地图上未标注出来。</div><div>该网站由 <a href="https://aztec-embassy.org/page/project.html"target="_blank" >阿兹特克帝国驻华使馆</a> 创建并维护。这是一个非营利性质的业余历史机构。</div>
+
+
+           </ul>
+        </div>
+
+		 </div>
+        <div id="rightTitle" style="width:350px;padding-left:140px;"><b>再 现 美 索 美 洲</b> </div> </div>
+ 
+
+
+</header> 
+
+
+
+
+
+
+
+
+
+
+    <div id='map'></div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close"></span>
+            <div  style="float:left;font-size: 1.5em; margin-block-end: 0.1em;font-weight:bold" id="modalTitle">Modal Dialogue Box</div>
+			<div  style="float:right;font-size: 1.5em; margin-block-end: 0.1em;font-weight:bold" id="modaldescription">Modal Dialogue Box</div>
+			<div style="clear:both;"></div>
+                <iframe class="iframe"	id="modalIframe" src="" frameborder="0"></iframe>
+            
+        </div>
+    </div>
+
+
+<button id="toggleBtn" >PLACE</button>
+
+
+
+
+
+    <script>
+	
+
+
+        // 等待页面加载完毕后执行动画
+        document.addEventListener("DOMContentLoaded", function() {
+            const background = document.getElementById("background");
+            const title = document.getElementById("title1");
+            const content = document.getElementById("content");
+            
+            // 慢慢显现标题大字
+            setTimeout(() => {
+                title.style.opacity = "1";
+            }, 10);
+            
+            // 显示标题大字 2 秒后消失并显示原始基础内容
+            setTimeout(() => {
+                background.style.opacity = "0";
+                background.style.pointerEvents = "none";
+                title.style.transform = "translateY(-50px)";
+                content.style.visibility = "visible";
+            }, 3200);
+        });
+
+
+
+ 
+ mapboxgl.accessToken = 'pk.eyJ1Ijoic2hpdW5naGFuY2hpbmciLCJhIjoiQXFuRm5UWSJ9.sN_XbiTG2UGjtIRzGgTO8A';
+  const map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/outdoors-v12',
+      center: [-94.576561,18.361581],
+      zoom: 6.15
+  });
+ 
+ 
+ 		
+		// 比例尺
+map.addControl(new mapboxgl.ScaleControl());
+		
+
+ map.on('load', function() {
+ 			 map.setPaintProperty('landcover','fill-color','rgba(156,203,121, 0.65)');
+  });	
+ 
+		
+//隐藏原有地图标签	
+ map.on('load', function() {
+               map.setLayoutProperty('tunnel-primary-secondary-tertiary-case','visibility','none');
+               map.setLayoutProperty('tunnel-major-link-case','visibility','none');
+               map.setLayoutProperty('tunnel-motorway-trunk-case','visibility','none');
+               map.setLayoutProperty('tunnel-path','visibility','none');
+               map.setLayoutProperty('tunnel-steps','visibility','none');
+               map.setLayoutProperty('tunnel-major-link','visibility','none');
+               map.setLayoutProperty('tunnel-pedestrian','visibility','none');
+               map.setLayoutProperty('tunnel-primary-secondary-tertiary','visibility','none');
+               map.setLayoutProperty('tunnel-oneway-arrow-blue','visibility','none');
+               map.setLayoutProperty('tunnel-motorway-trunk','visibility','none');
+               map.setLayoutProperty('tunnel-oneway-arrow-white','visibility','none');
+               map.setLayoutProperty('ferry','visibility','none');
+               map.setLayoutProperty('ferry-auto','visibility','none');
+               map.setLayoutProperty('road-pedestrian-case','visibility','none');
+               map.setLayoutProperty('road-street-low','visibility','none');
+               map.setLayoutProperty('road-street-case','visibility','none');
+               map.setLayoutProperty('road-secondary-tertiary-case','visibility','none');
+               map.setLayoutProperty('road-primary-case','visibility','none');
+               map.setLayoutProperty('road-major-link-case','visibility','none');
+               map.setLayoutProperty('road-motorway-trunk-case','visibility','none');
+               map.setLayoutProperty('road-path','visibility','none');
+               map.setLayoutProperty('road-steps','visibility','none');
+               map.setLayoutProperty('road-major-link','visibility','none');
+               map.setLayoutProperty('road-pedestrian','visibility','none');
+               map.setLayoutProperty('road-street','visibility','none');
+               map.setLayoutProperty('road-secondary-tertiary','visibility','none');
+               map.setLayoutProperty('road-primary','visibility','none');
+               map.setLayoutProperty('road-oneway-arrow-blue','visibility','none');
+               map.setLayoutProperty('road-motorway-trunk','visibility','none');
+               map.setLayoutProperty('road-oneway-arrow-white','visibility','none');
+               map.setLayoutProperty('bridge-pedestrian-case','visibility','none');
+               map.setLayoutProperty('bridge-primary-secondary-tertiary-case','visibility','none');
+               map.setLayoutProperty('bridge-major-link-case','visibility','none');
+               map.setLayoutProperty('bridge-motorway-trunk-case','visibility','none');
+               map.setLayoutProperty('bridge-path','visibility','none');
+               map.setLayoutProperty('bridge-steps','visibility','none');
+               map.setLayoutProperty('bridge-major-link','visibility','none');
+               map.setLayoutProperty('bridge-pedestrian','visibility','none');
+               map.setLayoutProperty('bridge-primary-secondary-tertiary','visibility','none');
+               map.setLayoutProperty('bridge-oneway-arrow-blue','visibility','none');
+               map.setLayoutProperty('bridge-motorway-trunk','visibility','none');
+               map.setLayoutProperty('bridge-major-link-2-case','visibility','none');
+               map.setLayoutProperty('bridge-motorway-trunk-2-case','visibility','none');
+               map.setLayoutProperty('bridge-major-link-2','visibility','none');
+               map.setLayoutProperty('bridge-motorway-trunk-2','visibility','none');
+               map.setLayoutProperty('bridge-oneway-arrow-white','visibility','none');
+               map.setLayoutProperty('aerialway','visibility','none');
+               map.setLayoutProperty('road-label','visibility','none');
+               map.setLayoutProperty('road-number-shield','visibility','none');
+               map.setLayoutProperty('road-exit-shield','visibility','none');
+               map.setLayoutProperty('waterway-label','visibility','none');
+               map.setLayoutProperty('natural-line-label','visibility','none');
+               map.setLayoutProperty('natural-point-label','visibility','none');
+               map.setLayoutProperty('water-line-label','visibility','none');
+               map.setLayoutProperty('water-point-label','visibility','none');
+               map.setLayoutProperty('poi-label','visibility','none');
+               map.setLayoutProperty('transit-label','visibility','none');
+               map.setLayoutProperty('airport-label','visibility','none');
+               map.setLayoutProperty('settlement-subdivision-label','visibility','none');
+               map.setLayoutProperty('settlement-label','visibility','none');
+               map.setLayoutProperty('state-label','visibility','none');
+               map.setLayoutProperty('country-label','visibility','none');
+               map.setLayoutProperty('continent-label','visibility','none');
+               map.setLayoutProperty('settlement-major-label','visibility','none');
+               map.setLayoutProperty('settlement-minor-label','visibility','none');
+               map.setLayoutProperty('settlement-subdivision-label','visibility','none');
+               map.setLayoutProperty('landuse','visibility','none');
+		 
+      });
+	  
+ 
+
+ 
+ // 设置按钮点击事件，切换地图上标注的显示与隐藏
+        var labelsVisible = false; // 初始状态为隐藏标注
+        document.getElementById('toggleBtn').addEventListener('click', function() {
+            if (labelsVisible) {
+                hideLabels(); // 隐藏标注
+            } else {
+                showLabels(); // 显示标注
+            }
+        });
+
+        // 显示地图上的标注
+        function showLabels() {
+map.setLayoutProperty('tunnel-primary-secondary-tertiary-case','visibility','visible');
+ map.setLayoutProperty('tunnel-major-link-case','visibility','visible');
+ map.setLayoutProperty('tunnel-motorway-trunk-case','visibility','visible');
+ map.setLayoutProperty('tunnel-path','visibility','visible');
+ map.setLayoutProperty('tunnel-steps','visibility','visible');
+ map.setLayoutProperty('tunnel-major-link','visibility','visible');
+ map.setLayoutProperty('tunnel-pedestrian','visibility','visible');
+ map.setLayoutProperty('tunnel-primary-secondary-tertiary','visibility','visible');
+ map.setLayoutProperty('tunnel-oneway-arrow-blue','visibility','visible');
+ map.setLayoutProperty('tunnel-motorway-trunk','visibility','visible');
+ map.setLayoutProperty('tunnel-oneway-arrow-white','visibility','visible');
+ map.setLayoutProperty('ferry','visibility','visible');
+ map.setLayoutProperty('ferry-auto','visibility','visible');
+ map.setLayoutProperty('road-pedestrian-case','visibility','visible');
+ map.setLayoutProperty('road-street-low','visibility','visible');
+ map.setLayoutProperty('road-street-case','visibility','visible');
+ map.setLayoutProperty('road-secondary-tertiary-case','visibility','visible');
+ map.setLayoutProperty('road-primary-case','visibility','visible');
+ map.setLayoutProperty('road-major-link-case','visibility','visible');
+ map.setLayoutProperty('road-motorway-trunk-case','visibility','visible');
+ map.setLayoutProperty('road-path','visibility','visible');
+ map.setLayoutProperty('road-steps','visibility','visible');
+ map.setLayoutProperty('road-major-link','visibility','visible');
+ map.setLayoutProperty('road-pedestrian','visibility','visible');
+ map.setLayoutProperty('road-street','visibility','visible');
+ map.setLayoutProperty('road-secondary-tertiary','visibility','visible');
+ map.setLayoutProperty('road-primary','visibility','visible');
+ map.setLayoutProperty('road-oneway-arrow-blue','visibility','visible');
+ map.setLayoutProperty('road-motorway-trunk','visibility','visible');
+ map.setLayoutProperty('road-oneway-arrow-white','visibility','visible');
+ map.setLayoutProperty('bridge-pedestrian-case','visibility','visible');
+ map.setLayoutProperty('bridge-primary-secondary-tertiary-case','visibility','visible');
+ map.setLayoutProperty('bridge-major-link-case','visibility','visible');
+ map.setLayoutProperty('bridge-motorway-trunk-case','visibility','visible');
+ map.setLayoutProperty('bridge-path','visibility','visible');
+ map.setLayoutProperty('bridge-steps','visibility','visible');
+ map.setLayoutProperty('bridge-major-link','visibility','visible');
+ map.setLayoutProperty('bridge-pedestrian','visibility','visible');
+ map.setLayoutProperty('bridge-primary-secondary-tertiary','visibility','visible');
+ map.setLayoutProperty('bridge-oneway-arrow-blue','visibility','visible');
+ map.setLayoutProperty('bridge-motorway-trunk','visibility','visible');
+ map.setLayoutProperty('bridge-major-link-2-case','visibility','visible');
+ map.setLayoutProperty('bridge-motorway-trunk-2-case','visibility','visible');
+ map.setLayoutProperty('bridge-major-link-2','visibility','visible');
+ map.setLayoutProperty('bridge-motorway-trunk-2','visibility','visible');
+ map.setLayoutProperty('bridge-oneway-arrow-white','visibility','visible');
+ map.setLayoutProperty('aerialway','visibility','visible');
+ map.setLayoutProperty('road-label','visibility','visible');
+ map.setLayoutProperty('road-number-shield','visibility','visible');
+ map.setLayoutProperty('road-exit-shield','visibility','visible');
+ map.setLayoutProperty('waterway-label','visibility','visible');
+ map.setLayoutProperty('natural-line-label','visibility','visible');
+ map.setLayoutProperty('natural-point-label','visibility','visible');
+ map.setLayoutProperty('water-line-label','visibility','visible');
+ map.setLayoutProperty('water-point-label','visibility','visible');
+ map.setLayoutProperty('poi-label','visibility','visible');
+ map.setLayoutProperty('transit-label','visibility','visible');
+ map.setLayoutProperty('airport-label','visibility','visible');
+ map.setLayoutProperty('settlement-subdivision-label','visibility','visible');
+ map.setLayoutProperty('settlement-label','visibility','visible');
+ map.setLayoutProperty('state-label','visibility','visible');
+ map.setLayoutProperty('country-label','visibility','visible');
+ map.setLayoutProperty('continent-label','visibility','visible');
+ map.setLayoutProperty('settlement-major-label','visibility','visible');
+ map.setLayoutProperty('settlement-minor-label','visibility','visible');
+ map.setLayoutProperty('settlement-subdivision-label','visibility','visible');
+ map.setLayoutProperty('landuse','visibility','visible');
+         labelsVisible = true;
+        }
+
+        // 隐藏地图上的标注
+        function hideLabels() {
+             map.setLayoutProperty('tunnel-primary-secondary-tertiary-case','visibility','none');
+ map.setLayoutProperty('tunnel-major-link-case','visibility','none');
+ map.setLayoutProperty('tunnel-motorway-trunk-case','visibility','none');
+ map.setLayoutProperty('tunnel-path','visibility','none');
+ map.setLayoutProperty('tunnel-steps','visibility','none');
+ map.setLayoutProperty('tunnel-major-link','visibility','none');
+ map.setLayoutProperty('tunnel-pedestrian','visibility','none');
+ map.setLayoutProperty('tunnel-primary-secondary-tertiary','visibility','none');
+ map.setLayoutProperty('tunnel-oneway-arrow-blue','visibility','none');
+ map.setLayoutProperty('tunnel-motorway-trunk','visibility','none');
+ map.setLayoutProperty('tunnel-oneway-arrow-white','visibility','none');
+ map.setLayoutProperty('ferry','visibility','none');
+ map.setLayoutProperty('ferry-auto','visibility','none');
+ map.setLayoutProperty('road-pedestrian-case','visibility','none');
+ map.setLayoutProperty('road-street-low','visibility','none');
+ map.setLayoutProperty('road-street-case','visibility','none');
+ map.setLayoutProperty('road-secondary-tertiary-case','visibility','none');
+ map.setLayoutProperty('road-primary-case','visibility','none');
+ map.setLayoutProperty('road-major-link-case','visibility','none');
+ map.setLayoutProperty('road-motorway-trunk-case','visibility','none');
+ map.setLayoutProperty('road-path','visibility','none');
+ map.setLayoutProperty('road-steps','visibility','none');
+ map.setLayoutProperty('road-major-link','visibility','none');
+ map.setLayoutProperty('road-pedestrian','visibility','none');
+ map.setLayoutProperty('road-street','visibility','none');
+ map.setLayoutProperty('road-secondary-tertiary','visibility','none');
+ map.setLayoutProperty('road-primary','visibility','none');
+ map.setLayoutProperty('road-oneway-arrow-blue','visibility','none');
+ map.setLayoutProperty('road-motorway-trunk','visibility','none');
+ map.setLayoutProperty('road-oneway-arrow-white','visibility','none');
+ map.setLayoutProperty('bridge-pedestrian-case','visibility','none');
+ map.setLayoutProperty('bridge-primary-secondary-tertiary-case','visibility','none');
+ map.setLayoutProperty('bridge-major-link-case','visibility','none');
+ map.setLayoutProperty('bridge-motorway-trunk-case','visibility','none');
+ map.setLayoutProperty('bridge-path','visibility','none');
+ map.setLayoutProperty('bridge-steps','visibility','none');
+ map.setLayoutProperty('bridge-major-link','visibility','none');
+ map.setLayoutProperty('bridge-pedestrian','visibility','none');
+ map.setLayoutProperty('bridge-primary-secondary-tertiary','visibility','none');
+ map.setLayoutProperty('bridge-oneway-arrow-blue','visibility','none');
+ map.setLayoutProperty('bridge-motorway-trunk','visibility','none');
+ map.setLayoutProperty('bridge-major-link-2-case','visibility','none');
+ map.setLayoutProperty('bridge-motorway-trunk-2-case','visibility','none');
+ map.setLayoutProperty('bridge-major-link-2','visibility','none');
+ map.setLayoutProperty('bridge-motorway-trunk-2','visibility','none');
+ map.setLayoutProperty('bridge-oneway-arrow-white','visibility','none');
+ map.setLayoutProperty('aerialway','visibility','none');
+ map.setLayoutProperty('road-label','visibility','none');
+ map.setLayoutProperty('road-number-shield','visibility','none');
+ map.setLayoutProperty('road-exit-shield','visibility','none');
+ map.setLayoutProperty('waterway-label','visibility','none');
+ map.setLayoutProperty('natural-line-label','visibility','none');
+ map.setLayoutProperty('natural-point-label','visibility','none');
+ map.setLayoutProperty('water-line-label','visibility','none');
+ map.setLayoutProperty('water-point-label','visibility','none');
+ map.setLayoutProperty('poi-label','visibility','none');
+ map.setLayoutProperty('transit-label','visibility','none');
+ map.setLayoutProperty('airport-label','visibility','none');
+ map.setLayoutProperty('settlement-subdivision-label','visibility','none');
+ map.setLayoutProperty('settlement-label','visibility','none');
+ map.setLayoutProperty('state-label','visibility','none');
+ map.setLayoutProperty('country-label','visibility','none');
+ map.setLayoutProperty('continent-label','visibility','none');
+ map.setLayoutProperty('settlement-major-label','visibility','none');
+ map.setLayoutProperty('settlement-minor-label','visibility','none');
+ map.setLayoutProperty('settlement-subdivision-label','visibility','none');
+ map.setLayoutProperty('landuse','visibility','none');
+             labelsVisible = false;
+        }
+ 
+		
+
+		
+ 
+
+
+        // 每个点包含经纬度和其他相关信息
+        var points = [
+{coordinates:[-98.843889, 19.6925  ], title: 'Teotihuacan', description: '特奥蒂瓦坎' , icon: 'image/1point/teotihuacan.png', iframeSrc: 'page/teotihuacan.html' },
+{coordinates:[-99.13135 , 19.43492 ], title: 'Tenochtitlan', description: '特诺奇蒂特兰' , icon: 'image/1point/tenochtitlan.png', iframeSrc: 'page/tenochtitlan.html' },
+{coordinates:[-90.19022 , 20.63856 ], title: 'Chunchucmil', description: '琼楚克米尔' , icon: 'image/1point/chunchucmil.png', iframeSrc: 'page/chunchucmil.html' },
+{coordinates:[-89.5903  , 21.091   ], title: 'Dzibilchaltún', description: '泽比查尔顿' , icon: 'image/1point/dzibilchaltun.png', iframeSrc: 'page/dzibilchaltun.html' },
+{coordinates:[-89.460556, 20.629444], title: 'Mayapan', description: '玛雅潘' , icon: 'image/1point/mayapan.png', iframeSrc: 'page/mayapan.html' },
+{coordinates:[-89.634533, 17.393561], title: 'Uaxactun', description: '瓦哈克通' , icon: 'image/1point/uaxactun.png', iframeSrc: 'page/uaxactun.html' },
+{coordinates:[-96.408889, 19.445   ], title: 'Cempoalan', description: '森坡阿兰' , icon: 'image/1point/cempoalan.png', iframeSrc: 'page/cempoalan.html' },
+{coordinates:[-99.295917, 18.803889], title: 'Xochicalco', description: '索奇卡尔科' , icon: 'image/1point/xochicalco.png', iframeSrc: 'page/xochicalco.html' },
+{coordinates:[-89.36    , 17.18    ], title: 'Nakum', description: '纳库姆' , icon: 'image/1point/nakum.png', iframeSrc: 'page/nakum.html' },
+{coordinates:[-89.623611, 17.221944], title: 'Tikal', description: '蒂卡尔' , icon: 'image/1point/tikal.png', iframeSrc: 'page/tikal.html' },
+{coordinates:[-92.046389, 17.484167], title: 'Palenque', description: '帕伦克' , icon: 'image/1point/palenque.png', iframeSrc: 'page/palenque.html' },
+{coordinates:[-89.405869, 18.510581], title: 'Xpuhil', description: '西普希' , icon: 'image/1point/xpuhil.png', iframeSrc: 'page/xpuhil.html' },
+{coordinates:[-89.810829, 18.105392], title: 'Calakmul', description: '卡拉克穆尔' , icon: 'image/1point/calakmul.png', iframeSrc: 'page/calakmul.html' },
+{coordinates:[-89.1425  , 14.8375  ], title: 'Copan', description: '科潘' , icon: 'image/1point/copan.png', iframeSrc: 'page/copan.html' },
+{coordinates:[-96.767778, 17.043889], title: 'Monte Alban', description: '阿尔班山' , icon: 'image/1point/montealban.png', iframeSrc: 'page/montealban.html' },
+{coordinates:[-96.359444, 16.927222], title: 'Mitla', description: '米特拉' , icon: 'image/1point/mitla.png', iframeSrc: 'page/mitla.html' },
+{coordinates:[-88.569167, 20.682778], title: 'Chichen Itza', description: '奇琴伊察' , icon: 'image/1point/chichenitza.png', iframeSrc: 'page/chichenitza.html' },
+{coordinates:[-89.771389, 20.359444], title: 'Uxmal', description: '乌斯马尔' , icon: 'image/1point/uxmal.png', iframeSrc: 'page/uxmal.html' },
+{coordinates:[-89.6525  , 20.178   ], title: 'Sayil', description: '萨伊尔' , icon: 'image/1point/sayil.png', iframeSrc: 'page/sayil.html' },
+{coordinates:[-87.731944, 20.49    ], title: 'Coba', description: '科巴' , icon: 'image/1point/coba.png', iframeSrc: 'page/coba.html' },
+{coordinates:[-87.428889, 20.214722], title: 'Tulum', description: '图卢姆' , icon: 'image/1point/tulum.png', iframeSrc: 'page/tulum.html' },
+{coordinates:[-97.378242, 20.448058], title: 'El Tajín', description: '埃尔塔欣' , icon: 'image/1point/eltajin.png', iframeSrc: 'page/eltajin.html' },
+{coordinates:[-91.2625  , 17.166667], title: 'Piedras Negras', description: '彼德拉斯内格拉斯' , icon: 'image/1point/piedrasnegras.png', iframeSrc: 'page/piedrasnegras.html' },
+{coordinates:[-99.340803, 20.064156], title: 'Tula', description: '图拉' , icon: 'image/1point/tula.png', iframeSrc: 'page/tula.html' },
+{coordinates:[-101.57416, 19.623611], title: 'Tzintzuntzan', description: '钦存赞' , icon: 'image/1point/tzintzuntzan.png', iframeSrc: 'page/tzintzuntzan.html' },
+{coordinates:[-93.20111 , 18.27944 ], title: 'Comalcalco', description: '科马尔卡尔科' , icon: 'image/1point/comalcalco.png', iframeSrc: 'page/comalcalco.html' },
+{coordinates:[-94.040192, 18.103299], title: 'La Venta', description: '拉文塔' , icon: 'image/1point/laventa.png', iframeSrc: 'page/laventa.html' },
+{coordinates:[-90.295833, 16.445833], title: 'Dos Pilas', description: '双柱城' , icon: 'image/1point/dospilas.png', iframeSrc: 'page/dospilas.html' },
+{coordinates:[-91.492744, 15.333794], title: 'Zaculeu', description: '扎库勒' , icon: 'image/1point/zaculeu.png', iframeSrc: 'page/zaculeu.html' },
+{coordinates:[-101.31666, 17.516667], title: 'Xihuacan', description: '西瓦坎' , icon: 'image/1point/xihuacan.png', iframeSrc: 'page/xihuacan.html' },
+{coordinates:[-98.892597, 19.328539], title: 'Acozac', description: '阿科扎克' , icon: 'image/1point/acozac.png', iframeSrc: 'page/acozac.html' },
+{coordinates:[-101.85   , 19.5     ], title: 'Tingambato ', description: '廷甘巴托' , icon: 'image/1point/tingambato.png', iframeSrc: 'page/tingambato.html' },
+
+
+
+
+
+
+
+
+
+
+        ];
+
+        // 遍历每个点，添加到地图上
+        points.forEach(function(point) {
+            var el = document.createElement('div');
+            el.className = 'marker';
+            el.style.backgroundImage = 'url(' + point.icon + ')';
+
+            var marker = new mapboxgl.Marker(el)
+                .setLngLat(point.coordinates)
+                .setPopup(new mapboxgl.Popup({ closeButton: false,offset: 18 }) // 添加弹出框
+                    .setHTML('<div class="h333">' + point.title + '</div>' + '<div class="h333">' +point.description + '</div>'))
+                .addTo(map);
+
+            // 鼠标移到标注点时显示 Popup
+            el.addEventListener('mouseenter', function() {
+                marker.getPopup().addTo(map);
+            });
+
+     //       // 鼠标离开标注点时隐藏 Popup
+              el.addEventListener('mouseleave', function() {
+                  marker.getPopup().remove();
+              });
+	
+            // 点击标注点时显示模态对话框
+            el.addEventListener('click', function() {
+                document.getElementById('modalTitle').textContent = point.title;
+				document.getElementById('modaldescription').textContent = point.description;
+                document.getElementById('modalIframe').src = point.iframeSrc;
+                document.getElementById('myModal').style.display = 'block';
+            });
+        });
+
+        // 获取模态对话框及关闭按钮
+        var modal = document.getElementById('myModal');
+        var closeBtn = document.getElementsByClassName('close')[0];
+
+        // 点击关闭按钮时隐藏模态对话框
+        closeBtn.onclick = function() {
+            document.getElementById('modalIframe').src = ''; // 清空 iframe 内容
+            modal.style.display = 'none';
+        };
+
+        // 当点击模态对话框外部时隐藏模态对话框
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                document.getElementById('modalIframe').src = ''; // 清空 iframe 内容
+                modal.style.display = 'none';
+            }
+        };
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+		
+		
+
+//一个区块		
+map.on('load', function () {
+
+
+// Add a data source containing GeoJSON data.
+map.addSource('lake1', {
+'type': 'geojson',
+'data': {
+'type': 'Feature',
+'geometry': {
+'type': 'Polygon',
+// These coordinates outline Maine.
+'coordinates': [
+[
+[-98.957462,19.321511,0 ],
+[-98.920212,19.305757,0 ],
+[-98.911408,19.304616,0 ],
+[-98.90603,19.300673,0 ],
+[-98.90877,19.293983,0 ],
+[-98.913893,19.29039,0 ],
+[-98.917959,19.29151,0 ],
+[-98.92931,19.27404,0 ],
+[-98.926907,19.270962,0 ],
+[-98.927722,19.26369,0 ],
+[-98.928752,19.261654,0 ],
+[-98.936348,19.254919,0 ],
+[-98.941509,19.252133,0 ],
+[-98.944824,19.252346,0 ],
+[-98.959254,19.226353,0 ],
+[-98.958642,19.221288,0 ],
+[-98.962907,19.220599,0 ],
+[-98.972086,19.223872,0 ],
+[-98.970444,19.230872,0 ],
+[-98.992052,19.234944,0 ],
+[-98.990958,19.223659,0 ],
+[-98.986613,19.219678,0 ],
+[-98.980664,19.219268,0 ],
+[-98.973651,19.221242,0 ],
+[-98.969213,19.220785,0 ],
+[-98.952527,19.208402,0 ],
+[-98.93902,19.209698,0 ],
+[-98.937855,19.2114,0 ],
+[-98.933451,19.209982,0 ],
+[-98.935747,19.22534,0 ],
+[-98.929825,19.233282,0 ],
+[-98.921671,19.24167,0 ],
+[-98.912659,19.246978,0 ],
+[-98.903389,19.246005,0 ],
+[-98.898239,19.2503,0 ],
+[-98.90562,19.255648,0 ],
+[-98.905792,19.263508,0 ],
+[-98.899784,19.272339,0 ],
+[-98.881931,19.287003,0 ],
+[-98.88588,19.306121,0 ],
+[-98.900986,19.308511,0 ],
+[-98.9105,19.305904,0 ],
+[-98.939094,19.319567,0 ],
+[-98.951111,19.321187,0 ],
+[-98.957462,19.321511,0 ]
+]
+]
+}
+}
+});
+ 
+// Add a new layer to visualize the polygon.
+map.addLayer({
+'id': 'lake1',
+'type': 'fill',
+'source': 'lake1', // reference the data source
+'layout': {},
+'paint': {
+'fill-color': '#79bcec', // blue color fill
+'fill-opacity': 1
+}
+});
+})	
+//一个区块结束	
+
+	
+//一个区块		
+map.on('load', function () {
+// Add a data source containing GeoJSON data.
+map.addSource('lake2', {
+'type': 'geojson',
+'data': {
+'type': 'Feature',
+'geometry': {
+'type': 'Polygon',
+// These coordinates outline Maine.
+'coordinates': [
+[
+[-98.920212,19.305757,0  ],
+[-98.957462,19.321511,0  ],
+[-98.958664,19.310009,0  ],
+[-98.980465,19.296724,0  ],
+[-99.020033,19.291459,0  ],
+[-99.002126,19.271038,0  ],
+[-99.000635,19.26608,0  ],
+[-99.005528,19.254108,0  ],
+[-98.997459,19.248112,0  ],
+[-98.992052,19.234944,0  ],
+[-98.970444,19.230872,0  ],
+[-98.962784,19.231337,0  ],
+[-98.959254,19.226353,0  ],
+[-98.944824,19.252346,0  ],
+[-98.947871,19.255162,0  ],
+[-98.949405,19.257572,0  ],
+[-98.949995,19.259942,0  ],
+[-98.949523,19.262434,0  ],
+[-98.943214,19.270314,0  ],
+[-98.934631,19.275337,0  ],
+[-98.92931,19.27404,0  ],
+[-98.917959,19.29151,0  ],
+[-98.920598,19.295125,0  ],
+[-98.922207,19.30117,0  ],
+[-98.920212,19.305757,0  ]
+]
+]
+}
+}
+});
+ 
+// Add a new layer to visualize the polygon.
+map.addLayer({
+'id': 'lake2',
+'type': 'fill',
+'source': 'lake2', // reference the data source
+'layout': {},
+'paint': {
+'fill-color': '#79bcec', // blue color fill
+'fill-opacity': 1
+}
+});
+})	
+//一个区块结束	
+	
+	
+//一个区块		
+map.on('load', function () {
+
+
+// Add a data source containing GeoJSON data.
+map.addSource('lake3', {
+'type': 'geojson',
+'data': {
+'type': 'Feature',
+'geometry': {
+'type': 'Polygon',
+// These coordinates outline Maine.
+'coordinates': [
+[
+[ -99.020033,19.291459,0 ],
+[ -99.035225,19.293403,0 ],
+[ -99.04089,19.296724,0 ],
+[ -99.061832,19.304663,0 ],
+[ -99.073849,19.315517,0 ],
+[ -99.096508,19.320863,0 ],
+[ -99.106293,19.326695,0 ],
+[ -99.128694,19.356174,0 ],
+[ -99.145968,19.350526,0 ],
+[ -99.150152,19.349182,0 ],
+[ -99.155989,19.346051,0 ],
+[ -99.210663,19.33123,0 ],
+[ -99.220619,19.318595,0 ],
+[ -99.219761,19.304015,0 ],
+[ -99.218044,19.295509,0 ],
+[ -99.195299,19.2964,0 ],
+[ -99.18603,19.294375,0 ],
+[ -99.172211,19.267721,0 ],
+[ -99.146011,19.276189,0 ],
+[ -99.137503,19.281272,0 ],
+[ -99.123845,19.278253,0 ],
+[ -99.107291,19.26837,0 ],
+[ -99.103997,19.272016,0 ],
+[ -99.100328,19.271692,0 ],
+[ -99.100113,19.269017,0 ],
+[ -99.098225,19.262798,0 ],
+[ -99.096913,19.254855,0 ],
+[ -99.092383,19.252969,0 ],
+[ -99.082958,19.250148,0 ],
+[ -99.080586,19.248274,0 ],
+[ -99.073677,19.24795,0 ],
+[ -99.065952,19.25427,0 ],
+[ -99.0490041,19.2547946,0 ],
+[ -99.038057,19.260712,0 ],
+[ -99.026127,19.260591,0 ],
+[ -99.013038,19.255952,0 ],
+[ -99.011589,19.254961,0 ],
+[ -99.005528,19.254108,0 ],
+[ -99.000635,19.26608,0 ],
+[ -99.006397,19.266136,0 ],
+[ -99.007168,19.266685,0 ],
+[ -99.009398,19.266666,0 ],
+[ -99.009086,19.267843,0 ],
+[ -99.011082,19.269256,0 ],
+[ -99.008976,19.271968,0 ],
+[ -99.0071299,19.2718366,0 ],
+[ -99.002126,19.271038,0 ],
+[ -99.020033,19.291459,0 ]
+]
+]
+}
+}
+});
+ 
+// Add a new layer to visualize the polygon.
+map.addLayer({
+'id': 'lake3',
+'type': 'fill',
+'source': 'lake3', // reference the data source
+'layout': {},
+'paint': {
+'fill-color': '#79bcec', // blue color fill
+'fill-opacity': 1
+}
+});
+})	
+//一个区块结束		
+//一个区块		
+map.on('load', function () {
+
+
+// Add a data source containing GeoJSON data.
+map.addSource('lake4', {
+'type': 'geojson',
+'data': {
+'type': 'Feature',
+'geometry': {
+'type': 'Polygon',
+// These coordinates outline Maine.
+'coordinates': [
+[
+[-99.155989,19.346051,0 ],
+[-99.150152,19.349182,0 ],
+[-99.151762,19.353021,0 ],
+[-99.1475703,19.3555941,0 ],
+[-99.144198,19.35746,0 ],
+[-99.147352,19.377084,0 ],
+[-99.150045,19.379343,0 ],
+[-99.147512,19.380376,0 ],
+[-99.148772,19.389342,0 ],
+[-99.149148,19.38911,0 ],
+[-99.151111,19.389039,0 ],
+[-99.153641,19.389525,0 ],
+[-99.153461,19.39337,0 ],
+[-99.139082,19.402469,0 ],
+[-99.136121,19.405181,0 ],
+[-99.13571,19.40829,0 ],
+[-99.13388,19.420488,0 ],
+[-99.143212,19.421559,0 ],
+[-99.153781,19.425787,0 ],
+[-99.149945,19.435505,0 ],
+[-99.153038,19.435983,0 ],
+[-99.151043,19.442566,0 ],
+[-99.148149,19.44165,0 ],
+[-99.148006,19.442551,0 ],
+[-99.145796,19.442091,0 ],
+[-99.145312,19.443964,0 ],
+[-99.142685,19.443527,0 ],
+[-99.14254,19.444556,0 ],
+[-99.148813,19.449046,0 ],
+[-99.154886,19.450324,0 ],
+[-99.178314,19.45128,0 ],
+[-99.181883,19.450239,0 ],
+[-99.186475,19.442428,0 ],
+[-99.183947,19.430666,0 ],
+[-99.182121,19.429586,0 ],
+[-99.1758944,19.4309686,0 ],
+[-99.1745211,19.4299973,0 ],
+[-99.178176,19.424628,0 ],
+[-99.177747,19.421835,0 ],
+[-99.179764,19.417059,0 ],
+[-99.184356,19.414428,0 ],
+[-99.184399,19.410907,0 ],
+[-99.178905,19.395687,0 ],
+[-99.164142,19.377592,0 ],
+[-99.15762,19.367349,0 ],
+[-99.155602,19.349807,0 ],
+[-99.155989,19.346051,0 ]
+]
+]
+}
+}
+});
+ 
+// Add a new layer to visualize the polygon.
+map.addLayer({
+'id': 'lake4',
+'type': 'fill',
+'source': 'lake4', // reference the data source
+'layout': {},
+'paint': {
+'fill-color': '#79bcec', // blue color fill
+'fill-opacity': 1
+}
+});
+})	
+//一个区块结束		
+	
+	
+	//一个区块		
+map.on('load', function () {
+// Add a data source containing GeoJSON data.
+map.addSource('lake5', {
+'type': 'geojson',
+'data': {
+'type': 'Feature',
+'geometry': {
+'type': 'Polygon',
+// These coordinates outline Maine.
+'coordinates': [
+[
+[ -99.186475,19.442428,0 ],
+[ -99.181883,19.450239,0 ],
+[ -99.182636,19.45447,0 ],
+[ -99.180953,19.455736,0 ],
+[ -99.179528,19.457614,0 ],
+[ -99.182167,19.458105,0 ],
+[ -99.182838,19.457856,0 ],
+[ -99.184136,19.455358,0 ],
+[ -99.186475,19.442428,0 ]
+]
+]
+}
+}
+});
+ 
+// Add a new layer to visualize the polygon.
+map.addLayer({
+'id': 'lake5',
+'type': 'fill',
+'source': 'lake5', // reference the data source
+'layout': {},
+'paint': {
+'fill-color': '#79bcec', // blue color fill
+'fill-opacity': 1
+}
+});
+})	
+//一个区块结束	
+
+
+	//一个区块		
+map.on('load', function () {
+// Add a data source containing GeoJSON data.
+map.addSource('lake6', {
+'type': 'geojson',
+'data': {
+'type': 'Feature',
+'geometry': {
+'type': 'Polygon',
+// These coordinates outline Maine.
+'coordinates': [
+[
+[-99.180953,19.455736,0],
+[-99.177963,19.453332,0],
+[-99.178314,19.45128,0],
+[-99.17482,19.453169,0],
+[-99.177277,19.455237,0],
+[-99.179528,19.457614,0],
+[-99.180953,19.455736,0]
+]
+]
+}
+}
+});
+ 
+// Add a new layer to visualize the polygon.
+map.addLayer({
+'id': 'lake6',
+'type': 'fill',
+'source': 'lake6', // reference the data source
+'layout': {},
+'paint': {
+'fill-color': '#79bcec', // blue color fill
+'fill-opacity': 1
+}
+});
+})	
+//一个区块结束	
+	
+	
+	
+//一个区块		
+map.on('load', function () {
+
+
+// Add a data source containing GeoJSON data.
+map.addSource('lake7', {
+'type': 'geojson',
+'data': {
+'type': 'Feature',
+'geometry': {
+'type': 'Polygon',
+// These coordinates outline Maine.
+'coordinates': [
+[
+[-99.179528,19.457614,0 ],
+[-99.177277,19.455237,0 ],
+[-99.173373,19.456035,0 ],
+[-99.172205,19.453847,0 ],
+[-99.17482,19.453169,0 ],
+[-99.178314,19.45128,0 ],
+[-99.154886,19.450324,0 ],
+[-99.153321,19.455344,0 ],
+[-99.170451,19.458662,0 ],
+[-99.17706,19.457083,0 ],
+[-99.179528,19.457614,0 ]
+]
+]
+}
+}
+});
+ 
+// Add a new layer to visualize the polygon.
+map.addLayer({
+'id': 'lake7',
+'type': 'fill',
+'source': 'lake7', // reference the data source
+'layout': {},
+'paint': {
+'fill-color': '#79bcec', // blue color fill
+'fill-opacity': 1
+}
+});
+})	
+//一个区块结束	
+//一个区块		
+map.on('load', function () {
+
+
+// Add a data source containing GeoJSON data.
+map.addSource('lake8', {
+'type': 'geojson',
+'data': {
+'type': 'Feature',
+'geometry': {
+'type': 'Polygon',
+// These coordinates outline Maine.
+'coordinates': [
+[
+[-99.182838,19.457856,0 ],
+[-99.179528,19.457614,0 ],
+[-99.176878,19.46352,0 ],
+[-99.170537,19.465378,0 ],
+[-99.170451,19.458662,0 ],
+[-99.153321,19.455344,0 ],
+[-99.147488,19.458907,0 ],
+[-99.119682,19.482777,0 ],
+[-99.119146,19.487935,0 ],
+[-99.116764,19.492001,0 ],
+[-99.113438,19.494772,0 ],
+[-99.112902,19.498554,0 ],
+[-99.122064,19.503287,0 ],
+[-99.122471,19.508506,0 ],
+[-99.133759,19.511337,0 ],
+[-99.140196,19.522583,0 ],
+[-99.158844,19.531278,0 ],
+[-99.161665,19.529923,0 ],
+[-99.166295,19.530499,0 ],
+[-99.166031,19.524362,0 ],
+[-99.172211,19.523876,0 ],
+[-99.179592,19.51789,0 ],
+[-99.182838,19.457856,0 ]
+]
+]
+}
+}
+});
+ 
+// Add a new layer to visualize the polygon.
+map.addLayer({
+'id': 'lake8',
+'type': 'fill',
+'source': 'lake8', // reference the data source
+'layout': {},
+'paint': {
+'fill-color': '#79bcec', // blue color fill
+'fill-opacity': 1
+}
+});
+})	
+//一个区块结束	
+//一个区块		
+map.on('load', function () {
+
+
+// Add a data source containing GeoJSON data.
+map.addSource('lake9', {
+'type': 'geojson',
+'data': {
+'type': 'Feature',
+'geometry': {
+'type': 'Polygon',
+// These coordinates outline Maine.
+'coordinates': [
+[
+[-99.152318,19.39418,0 ],
+[-99.149475,19.393897,0 ],
+[-99.148555,19.392925,0 ],
+[-99.147978,19.390294,0 ],
+[-99.148772,19.389342,0 ],
+[-99.147512,19.380376,0 ],
+[-99.142941,19.37988,0 ],
+[-99.138907,19.378603,0 ],
+[-99.139251,19.376924,0 ],
+[-99.142277,19.376221,0 ],
+[-99.147352,19.377084,0 ],
+[-99.144198,19.35746,0 ],
+[-99.145968,19.350526,0 ],
+[-99.128694,19.356174,0 ],
+[-99.128008,19.360101,0 ],
+[-99.1208397,19.3625597, ],
+[-99.112494,19.362187,0 ],
+[-99.10346,19.360142,0 ],
+[-99.101948,19.364292,0 ],
+[-99.111732,19.37416,0 ],
+[-99.115901,19.376175,0 ],
+[-99.115969,19.377762,0 ],
+[-99.139082,19.402469,0 ],
+[-99.152318,19.39418,0 ]
+]
+]
+}
+}
+});
+ 
+// Add a new layer to visualize the polygon.
+map.addLayer({
+'id': 'lake9',
+'type': 'fill',
+'source': 'lake9', // reference the data source
+'layout': {},
+'paint': {
+'fill-color': '#79bcec', // blue color fill
+'fill-opacity': 1
+}
+});
+})	
+//一个区块结束	
+	
+	
+
+	
+	
+//一个区块		
+map.on('load', function () {
+
+
+// Add a data source containing GeoJSON data.
+map.addSource('lakea0', {
+'type': 'geojson',
+'data': {
+'type': 'Feature',
+'geometry': {
+'type': 'Polygon',
+// These coordinates outline Maine.
+'coordinates': [
+[
+[ -99.13571,19.40829,0 ],
+[ -99.136121,19.405181,0 ],
+[ -99.135931,19.402396,0 ],
+[ -99.139082,19.402469,0 ],
+[ -99.115969,19.377762,0 ],
+[ -99.1131791,19.3765943,0 ],
+[ -99.109873,19.375909,0 ],
+[ -99.11017,19.37461,0 ],
+[ -99.111732,19.37416,0 ],
+[ -99.101948,19.364292,0 ],
+[ -99.091144,19.365244,0 ],
+[ -99.097366,19.39261,0 ],
+[ -99.10039,19.39574,0 ],
+[ -99.105215,19.397088,0 ],
+[ -99.108079,19.404107,0 ],
+[ -99.114628,19.406495,0 ],
+[ -99.118686,19.406414,0 ],
+[ -99.11839,19.40965,0 ],
+[ -99.121743,19.411348,0 ],
+[ -99.121826,19.40925,0 ],
+[ -99.13571,19.40829,0 ]
+]
+]
+}
+}
+});
+ 
+// Add a new layer to visualize the polygon.
+map.addLayer({
+'id': 'lakea0',
+'type': 'fill',
+'source': 'lakea0', // reference the data source
+'layout': {},
+'paint': {
+'fill-color': '#79bcec', // blue color fill
+'fill-opacity': 1
+}
+});
+})	
+//一个区块结束	
+//一个区块		
+map.on('load', function () {
+
+
+// Add a data source containing GeoJSON data.
+map.addSource('lakea1', {
+'type': 'geojson',
+'data': {
+'type': 'Feature',
+'geometry': {
+'type': 'Polygon',
+// These coordinates outline Maine.
+'coordinates': [
+[
+[ -99.147488,19.458907,0  ],
+[ -99.14153,19.458364,0  ],
+[ -99.135786,19.456344,0  ],
+[ -99.1294464,19.4529217,  ],
+[ -99.125422,19.452206,0  ],
+[ -99.12565,19.447254,0  ],
+[ -99.122972,19.442667,0  ],
+[ -99.118533,19.438161,0  ],
+[ -99.120428,19.422147,0  ],
+[ -99.121844,19.411883,0  ],
+[ -99.1180648,19.4107931,  ],
+[ -99.114348,19.410623,0  ],
+[ -99.114628,19.406495,0  ],
+[ -99.108079,19.404107,0  ],
+[ -99.105605,19.403954,0  ],
+[ -99.091532,19.401772,0  ],
+[ -99.090732,19.40001,0  ],
+[ -99.089159,19.398692,0  ],
+[ -99.089406,19.394614,0  ],
+[ -99.097366,19.39261,0  ],
+[ -99.091144,19.365244,0  ],
+[ -99.086101,19.362166,0  ],
+[ -99.0817584,19.3575179,  ],
+[ -99.065094,19.34678,0  ],
+[ -99.0493144,19.3413214,  ],
+[ -99.034796,19.332769,0  ],
+[ -98.999176,19.346132,0  ],
+[ -98.97995,19.357146,0  ],
+[ -98.968964,19.362328,0  ],
+[ -98.96965,19.37075,0  ],
+[ -98.984756,19.398602,0  ],
+[ -98.978577,19.416735,0  ],
+[ -98.959351,19.429687,0  ],
+[ -99.080041,19.437855,0  ],
+[ -99.086023,19.438502,0  ],
+[ -99.085902,19.440295,0  ],
+[ -99.08462,19.442172,0  ],
+[ -99.082522,19.443018,0  ],
+[ -99.106186,19.48221,0  ],
+[ -99.119682,19.482777,0  ],
+[ -99.147488,19.458907,0  ]
+]
+]
+}
+}
+});
+ 
+// Add a new layer to visualize the polygon.
+map.addLayer({
+'id': 'lakea1',
+'type': 'fill',
+'source': 'lakea1', // reference the data source
+'layout': {},
+'paint': {
+'fill-color': '#79bcec', // blue color fill
+'fill-opacity': 1
+}
+});
+})	
+//一个区块结束	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//一个区块		
+map.on('load', function () {
+
+
+// Add a data source containing GeoJSON data.
+map.addSource('lake12', {
+'type': 'geojson',
+'data': {
+'type': 'Feature',
+'geometry': {
+'type': 'Polygon',
+// These coordinates outline Maine.
+'coordinates': [
+[
+[ -99.051361,19.555261,0 ],
+[ -99.051158,19.549053,0 ],
+[ -99.052671,19.542845,0 ],
+[ -99.06105,19.533644,0 ],
+[ -99.06239,19.522663,0 ],
+[ -99.07402,19.509396,0 ],
+[ -99.08608,19.507494,0 ],
+[ -99.09462,19.49378,0 ],
+[ -99.106186,19.48221,0 ],
+[ -99.082522,19.443018,0 ],
+[ -99.079895,19.441599,0 ],
+[ -99.078895,19.440142,0 ],
+[ -99.080041,19.437855,0 ],
+[ -98.959351,19.429687,0 ],
+[ -98.937378,19.423859,0 ],
+[ -98.911285,19.421268,0 ],
+[ -98.897552,19.425154,0 ],
+[ -98.884506,19.433572,0 ],
+[ -98.882961,19.445227,0 ],
+[ -98.887424,19.456557,0 ],
+[ -98.882188,19.473389,0 ],
+[ -98.88163,19.483262,0 ],
+[ -98.882338,19.491636,0 ],
+[ -98.889914,19.495803,0 ],
+[ -98.898216,19.506017,0 ],
+[ -98.89974,19.51793,0 ],
+[ -98.928452,19.556555,0 ],
+[ -98.938751,19.568848,0 ],
+[ -98.953857,19.579846,0 ],
+[ -98.957291,19.595372,0 ],
+[ -98.982523,19.613162,0 ],
+[ -99.009132,19.623832,0 ],
+[ -99.025612,19.651318,0 ],
+[ -99.032822,19.668776,0 ],
+[ -99.047154,19.683931,0 ],
+[ -99.055823,19.68096,0 ],
+[ -99.059815,19.68785,0 ],
+[ -99.105526,19.689147,0 ],
+[ -99.111234,19.683748,0 ],
+[ -99.120527,19.6829899,0 ],
+[ -99.127303,19.679181,0 ],
+[ -99.132055,19.680647,0 ],
+[ -99.151437,19.706346,0 ],
+[ -99.172212,19.699001,0 ],
+[ -99.168606,19.658586,0 ],
+[ -99.14217,19.658025,0 ],
+[ -99.127407,19.662634,0 ],
+[ -99.104575,19.656411,0 ],
+[ -99.094105,19.647599,0 ],
+[ -99.076507,19.641214,0 ],
+[ -99.0477426,19.6125031,0 ],
+[ -99.028015,19.597313,0 ],
+[ -99.032822,19.575318,0 ],
+[ -99.051361,19.555261,0 ]
+]
+]
+}
+}
+});
+ 
+// Add a new layer to visualize the polygon.
+map.addLayer({
+'id': 'lake12',
+'type': 'fill',
+'source': 'lake12', // reference the data source
+'layout': {},
+'paint': {
+'fill-color': '#79bcec', // blue color fill
+'fill-opacity': 1
+}
+});
+})	
+//一个区块结束	
+
+
+
+
+
+
+
+//一个区块		
+map.on('load', function () {
+
+
+// Add a data source containing GeoJSON data.
+map.addSource('lake13', {
+'type': 'geojson',
+'data': {
+'type': 'Feature',
+'geometry': {
+'type': 'Polygon',
+// These coordinates outline Maine.
+'coordinates': [
+[
+[-99.172212,19.699001,0     ],
+[-99.151437,19.706346,0     ],
+[-99.147526,19.708437,0     ],
+[-99.133524,19.712942,0     ],
+[-99.1719,19.739187,0       ],
+[-99.180258,19.745195,0     ],
+[-99.17902,19.751484,0      ],
+[-99.100628,19.812738,0     ],
+[-99.122601,19.813061,0     ],
+[-99.1397011,19.806724,0    ],
+[-99.1457092,19.8054319,0   ],
+[-99.149765,19.80414,0      ],
+[-99.182168,19.797638,0     ],
+[-99.195728,19.791903,0     ],
+[-99.185514,19.765815,0     ],
+[-99.185786,19.75041,0      ],
+[-99.19487,19.715324,0      ],
+[-99.172212,19.699001,0     ]
+]
+]
+}
+}
+});
+ 
+// Add a new layer to visualize the polygon.
+map.addLayer({
+'id': 'lake13',
+'type': 'fill',
+'source': 'lake13', // reference the data source
+'layout': {},
+'paint': {
+'fill-color': '#79bcec', // blue color fill
+'fill-opacity': 1
+}
+});
+})	
+//一个区块结束	
+
+
+
+
+
+
+//一个区块		
+map.on('load', function () {
+
+
+// Add a data source containing GeoJSON data.
+map.addSource('lake14', {
+'type': 'geojson',
+'data': {
+'type': 'Feature',
+'geometry': {
+'type': 'Polygon',
+// These coordinates outline Maine.
+'coordinates': [
+[
+[ -99.076426,19.820494,0 ],
+[ -99.100628,19.812738,0 ],
+[ -99.17902,19.751484,0 ],
+[ -99.171153,19.748139,0 ],
+[ -99.1719,19.739187,0 ],
+[ -99.133524,19.712942,0 ],
+[ -99.110498,19.715162,0 ],
+[ -99.104877,19.713745,0 ],
+[ -99.054451,19.724211,0 ],
+[ -99.04844,19.724899,0 ],
+[ -99.04256,19.720062,0 ],
+[ -99.08977,19.792168,0 ],
+[ -99.096261,19.791295,0 ],
+[ -99.102633,19.794762,0 ],
+[ -99.104581,19.798161,0 ],
+[ -99.101003,19.80162,0 ],
+[ -99.09565,19.804744,0 ],
+[ -99.089942,19.804926,0 ],
+[ -99.084749,19.802444,0 ],
+[ -99.076426,19.820494,0 ]
+]
+]
+}
+}
+});
+ 
+// Add a new layer to visualize the polygon.
+map.addLayer({
+'id': 'lake14',
+'type': 'fill',
+'source': 'lake14', // reference the data source
+'layout': {},
+'paint': {
+'fill-color': '#79bcec', // blue color fill
+'fill-opacity': 1
+}
+});
+})	
+//一个区块结束	
+
+
+
+
+
+
+//一个区块		
+map.on('load', function () {
+
+
+// Add a data source containing GeoJSON data.
+map.addSource('lake15', {
+'type': 'geojson',
+'data': {
+'type': 'Feature',
+'geometry': {
+'type': 'Polygon',
+// These coordinates outline Maine.
+'coordinates': [
+[
+[ -99.076426,19.820494,0 ],
+[ -99.084749,19.802444,0 ],
+[ -99.085457,19.796135,0 ],
+[ -99.08977,19.792168,0 ],
+[ -99.04256,19.720062,0 ],
+[ -99.042173,19.715224,0 ],
+[ -99.049728,19.713526,0 ],
+[ -99.053763,19.71605,0 ],
+[ -99.054451,19.724211,0 ],
+[ -99.104877,19.713745,0 ],
+[ -99.101315,19.708774,0 ],
+[ -99.101318,19.702693,0 ],
+[ -99.105526,19.689147,0 ],
+[ -99.059815,19.68785,0 ],
+[ -99.053591,19.690943,0 ],
+[ -99.04857,19.68974,0 ],
+[ -99.047154,19.683931,0 ],
+[ -99.032822,19.668776,0 ],
+[ -99.014623,19.690356,0 ],
+[ -98.998489,19.696577,0 ],
+[ -98.983383,19.704981,0 ],
+[ -98.97583,19.721464,0 ],
+[ -98.956776,19.740935,0 ],
+[ -98.974457,19.761534,0 ],
+[ -99.0075886,19.7784459,0 ],
+[ -99.020203,19.790816,0 ],
+[ -99.021577,19.801616,0 ],
+[ -99.034044,19.809816,0 ],
+[ -99.047199,19.81553,0 ],
+[ -99.076426,19.820494,0 ]
+]
+]
+}
+}
+});
+ 
+// Add a new layer to visualize the polygon.
+map.addLayer({
+'id': 'lake15',
+'type': 'fill',
+'source': 'lake15', // reference the data source
+'layout': {},
+'paint': {
+'fill-color': '#79bcec', // blue color fill
+'fill-opacity': 1
+}
+});
+})	
+//一个区块结束	
+
+
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+    </script>
+</body>
+</html>
