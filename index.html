@@ -28,9 +28,9 @@ body { margin: 0; padding: 0; font-family:STKaiti,STSong,Simsun,"Times New Roman
                 margin-left: auto; /* 将图标居中 */
             }
 		.dropdown-menu {width: 100vw;}	
-        }
-
-
+        
+		.modal-content {margin-top:6em;width:96%; }
+}
 
     </style>
 </head>
@@ -133,7 +133,6 @@ body { margin: 0; padding: 0; font-family:STKaiti,STSong,Simsun,"Times New Roman
 
    function setMapZoom() {
             const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-
             if (screenWidth < 768) { // 当设备屏幕宽度小于768像素（通常表示手机访问）
                 return 4.5; // 设置地图zoom级别为4.5
             } else {
@@ -141,17 +140,8 @@ body { margin: 0; padding: 0; font-family:STKaiti,STSong,Simsun,"Times New Roman
             }
         }
 		
-   function setMapZoom() {
-            const screenHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 
-            if (screenHeight < 768) { // 当设备屏幕宽度小于768像素（通常表示手机访问）
-                return 5.1; // 设置地图zoom级别为4.5
-            } else {
-                return 6.15; // 设置地图zoom级别为6.15
-            }
-        }
-		
- 
+
 
  
  mapboxgl.accessToken = 'pk.eyJ1Ijoic2hpdW5naGFuY2hpbmciLCJhIjoiQXFuRm5UWSJ9.sN_XbiTG2UGjtIRzGgTO8A';
